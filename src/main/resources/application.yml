@@ -1,0 +1,58 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: ORDER-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/productservice
+    password: ''
+    username: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  config:
+    import: "optional:configserver:http://localhost:8888"
+logging:
+  level:
+    com:
+      microservices:
+        orderservice: DEBUG
+eureka:
+  instance:
+    hostname: localhost
+resilience4j:
+  circuitbreaker:
+    instances:
+      orderCircuitBreaker:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 6s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
+  retry:
+    instances:
+      retryProductService:
+        max-attempts: 3
+        wait-duration: 15s
+  bulkhead:
+    instances:
+      orderBulkHead:
+        maxWaitDuration: 1s
+        maxConcurrentCalls: 5
+  ratelimiter:
+    instances:
+      orderRateLimiter:
+        limitForPeriod: 2
+        limitRefreshPeriod: 4s
+        timeoutDuration: 5s
+  timelimiter:
+    instances:
+      orderTimeLimiter:
+        timeoutDuration: 5s
+        cancelRunningFuture: true
