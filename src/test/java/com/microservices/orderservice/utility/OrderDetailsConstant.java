@@ -1,10 +1,10 @@
 package com.microservices.orderservice.utility;
 
-import com..orderservice.dto.OrderDto;
-import com..orderservice.dto.OrderLineDto;
-import com..orderservice.dto.ProductDto;
-import com..orderservice.entity.Order;
-import com..orderservice.entity.OrderLine;
+import com.microservices.orderservice.dto.OrderDto;
+import com.microservices.orderservice.dto.OrderLineDto;
+import com.microservices.orderservice.dto.ProductDto;
+import com.microservices.orderservice.entity.Order;
+import com.microservices.orderservice.entity.OrderLine;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;

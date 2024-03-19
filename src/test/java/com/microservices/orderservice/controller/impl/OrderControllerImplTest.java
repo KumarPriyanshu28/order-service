@@ -26,6 +26,7 @@ import java.util.List;
 
 import static com.microservices.orderservice.utility.ErrorCodeConstant.*;
 import static com.microservices.orderservice.utility.ExceptionConstant.*;
+import static com.microservices.orderservice.utility.OrderDetailsConstant.*;
 import static com.microservices.orderservice.utility.UrlConstant.GENERIC_ORDERS_URL;
 import static com.microservices.orderservice.utility.UrlConstant.SPECIFIC_ORDER_URL;
 import static com.microservices.orderservice.utility.ValidationMessageConstant.*;

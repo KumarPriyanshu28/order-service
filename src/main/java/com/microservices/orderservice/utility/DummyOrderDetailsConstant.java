@@ -14,12 +14,12 @@ import java.util.List;
  * @version 1.0
  * @since 23/02/2024
  */
-public class OrderDetailsConstant {
+public class DummyOrderDetailsConstant {
 
     /**
      * Private constructor to prevent instantiation of the class.
      */
-    private OrderDetailsConstant() {}
+    private DummyOrderDetailsConstant() {}
 
     /**
      * Dummy orderLineDto that is used during service failure.

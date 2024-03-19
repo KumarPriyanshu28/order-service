@@ -19,6 +19,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+import static com.microservices.orderservice.utility.ExceptionConstant.*;
+
 /**
  * Implementation of the {@link OrderService} interface providing business logic for order operations.
  *

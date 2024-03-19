@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import static com.microservices.orderservice.utility.ValidationConstant.*;
+
 /**
  * Data Transfer Object (DTO) representing an order line.
  *
