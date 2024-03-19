@@ -1,4 +1,4 @@
-package com.microservices.orderservice.utility;
+package com.microservices.orderservice.constants;
 
 import com.microservices.orderservice.dto.OrderDto;
 import com.microservices.orderservice.dto.OrderLineDto;
@@ -14,12 +14,12 @@ import java.util.List;
  * @version 1.0
  * @since 23/02/2024
  */
-public class DummyOrderDetailsConstant {
+public class Constants {
 
     /**
      * Private constructor to prevent instantiation of the class.
      */
-    private DummyOrderDetailsConstant() {}
+    private Constants() {}
 
     /**
      * Dummy orderLineDto that is used during service failure.

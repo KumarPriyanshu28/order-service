@@ -19,7 +19,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-import static com.microservices.orderservice.utility.DummyOrderDetailsConstant.DUMMY_ORDER_DTO;
+import static com.microservices.orderservice.constants.Constants.DUMMY_ORDER_DTO;
+
 
 /**
  * Implementation of the {@link OrderController} interface that handles HTTP requests related to orders.
