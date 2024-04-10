@@ -23,7 +23,7 @@
     "/orders": {
       "get": {
         "tags": [
-          "GET",
+          "Fetch all orders",
           "OrderController"
         ],
         "summary": "Retrieve all orders.",
@@ -44,8 +44,8 @@
       },
       "post": {
         "tags": [
-          "POST",
-          "OrderController"
+          "OrderController",
+          "Create order"
         ],
         "summary": "Creates a new order.",
         "description": "Creates a new order in the database.",
@@ -68,22 +68,22 @@
           "required": true
         },
         "responses": {
-          "200": {
-            "description": "Successfully created a new order.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderDto"
-                }
-              }
-            }
-          },
           "400": {
             "description": "Invalid input for creating a order.",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorDto"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Successfully created a new order.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderDto"
                 }
               }
             }
@@ -94,7 +94,7 @@
     "/orders/{orderId}": {
       "get": {
         "tags": [
-          "GET",
+          "Fetch order by its Id",
           "OrderController"
         ],
         "summary": "Retrieves an order by its Id",
@@ -113,16 +113,6 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Successfully retrieved the order.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderDto"
-                }
-              }
-            }
-          },
           "404": {
             "description": "order not found.",
             "content": {
@@ -132,12 +122,22 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Successfully retrieved the order.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderDto"
+                }
+              }
+            }
           }
         }
       },
       "delete": {
         "tags": [
-          "DELETE",
+          "Delete order",
           "OrderController"
         ],
         "summary": "Deletes an order by its Id.",
